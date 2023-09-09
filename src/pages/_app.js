@@ -20,6 +20,7 @@ import {
   trustWallet,
   ledgerWallet,
 } from "@rainbow-me/rainbowkit/wallets";
+import { Layout } from "@/components/Layout";
 import { publicProvider } from "wagmi/providers/public";
 import { configureChains, createConfig, WagmiConfig } from "wagmi";
 
@@ -75,7 +76,9 @@ export default function App({ Component, pageProps }) {
         appInfo={demoAppInfo}
         chains={chains}
       >
-        <Component {...pageProps} />
+        <Layout>
+          <Component {...pageProps} />
+        </Layout>
       </RainbowKitProvider>
     </WagmiConfig>
   );

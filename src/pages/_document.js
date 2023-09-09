@@ -4,6 +4,8 @@ export default function Document() {
   return (
     <Html lang="en">
       <Head>
+        <html className="h-full bg-white" />
+        <body className="h-full" />
         <link
           rel="apple-touch-icon"
           sizes="180x180"

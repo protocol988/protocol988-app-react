@@ -1,7 +1,7 @@
 import { Donut } from "@/components/Donut";
 import { Analysis } from "@/components/Analysis";
 
-export default function Home() {
+export default function Market() {
   return (
     <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:max-w-7xl lg:px-8">
       <h1 className="sr-only">Page title</h1>
@@ -14,9 +14,7 @@ export default function Home() {
               Section title
             </h2>
             <div className="overflow-hidden rounded-lg bg-white shadow">
-              <div className="p-6">
-                <Analysis />
-              </div>
+              <div className="p-6">{/* <Analysis /> */}</div>
             </div>
           </section>
         </div>
@@ -28,9 +26,7 @@ export default function Home() {
               Section title
             </h2>
             <div className="overflow-hidden rounded-lg bg-white shadow">
-              <div className="p-6">
-                <Donut />
-              </div>
+              <div className="p-6">{/* <Donut /> */}</div>
             </div>
           </section>
         </div>
