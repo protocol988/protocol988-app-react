@@ -6,6 +6,7 @@ import {
   optimism,
   arbitrum,
   goerli,
+  sepolia,
   scrollSepolia,
   zkSyncTestnet,
 } from "wagmi/chains";
@@ -31,9 +32,9 @@ const { chains, publicClient, webSocketPublicClient } = configureChains(
     polygon,
     optimism,
     arbitrum,
-    zkSyncTestnet,
-    scrollSepolia,
-    ...(process.env.NEXT_PUBLIC_ENABLE_TESTNETS === "true" ? [goerli] : []),
+    ...(process.env.NEXT_PUBLIC_ENABLE_TESTNETS === "true"
+      ? [goerli, sepolia, zkSyncTestnet, scrollSepolia]
+      : []),
   ],
   [publicProvider()]
 );
