@@ -1,5 +1,5 @@
 import { ethers } from "ethers";
-import { createContext, useState, useEffect } from "react";
+import { createContext, useState } from "react";
 
 const ForwardContext = createContext();
 
@@ -10,6 +10,7 @@ const contractAbi = [
 ];
 
 const mintForward = async (details) => {
+  console.log(details);
   try {
     const provider = new ethers.JsonRpcProvider("http://localhost:8545");
     const contractAddress = "0xFC628dd79137395F3C9744e33b1c5DE554D94882";
@@ -47,14 +48,11 @@ const ForwardContextProvider = ({ children }) => {
     oTokenAmount: 5,
   });
 
-  useEffect(() => {
-    mintForward(forwardDetails);
-  }, []);
-
   return (
     <ForwardContext.Provider
       value={{
         setAddress,
+        mintForward,
         setForwardDetails,
       }}
     >
