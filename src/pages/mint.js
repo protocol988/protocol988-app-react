@@ -1,6 +1,6 @@
 import { useContext } from "react";
+import { Title } from "@tremor/react";
 import { Form } from "@/components/Form";
-import { Donut } from "@/components/Donut";
 import { Metrics } from "@/components/Metrics";
 import { ForwardContext } from "@/context/ForwardContext";
 
@@ -34,6 +34,9 @@ export default function Mint() {
             </h2>
             <div className="overflow-hidden rounded-lg bg-white shadow">
               <div className="p-6">
+                <div className="pb-2">
+                  <Title>Create Forward Swap</Title>
+                </div>
                 <Form />
               </div>
             </div>

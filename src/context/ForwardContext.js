@@ -1,4 +1,5 @@
 import { ethers } from "ethers";
+import toast from "react-hot-toast";
 import { createContext, useState } from "react";
 
 const ForwardContext = createContext();
@@ -10,7 +11,7 @@ const contractAbi = [
 ];
 
 const mintForward = async (details) => {
-  console.log(details);
+  toast.success("Swap created!");
   try {
     const provider = new ethers.JsonRpcProvider("http://localhost:8545");
     const contractAddress = "0xFC628dd79137395F3C9744e33b1c5DE554D94882";
@@ -30,7 +31,6 @@ const mintForward = async (details) => {
       details.oTokenAmount
     );
 
-    console.log(`The value returned from the contract is: ${value}`);
     return value;
   } catch (error) {
     console.error(`An error occurred: ${error}`);

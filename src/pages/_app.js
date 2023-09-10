@@ -1,4 +1,5 @@
 import "@/styles/globals.css";
+import { Toaster } from "react-hot-toast";
 import "@rainbow-me/rainbowkit/styles.css";
 import {
   mainnet,
@@ -81,6 +82,7 @@ export default function App({ Component, pageProps }) {
         >
           <Layout>
             <Component {...pageProps} />
+            <Toaster />
           </Layout>
         </RainbowKitProvider>
       </WagmiConfig>
