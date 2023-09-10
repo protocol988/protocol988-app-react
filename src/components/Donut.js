@@ -33,7 +33,7 @@ const valueFormatter = (number) =>
 export function Donut() {
   return (
     <Card className="max-w-lg">
-      <Title>Net Exposure</Title>
+      <Title>Collateral Composition</Title>
       <DonutChart
         className="mt-6"
         data={cities}
