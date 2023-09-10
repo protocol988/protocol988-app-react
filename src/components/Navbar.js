@@ -1,24 +1,29 @@
 import clsx from "clsx";
 import Link from "next/link";
-import { useState } from "react";
+import { useRouter } from "next/router";
+import { useState, useEffect } from "react";
 import { Disclosure } from "@headlessui/react";
 import { ConnectButton } from "@rainbow-me/rainbowkit";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 
 const navigation = [
   { name: "Home", href: "/" },
-  { name: "Marketplace", href: "/market" },
+  { name: "Mint", href: "/mint" },
   { name: "Account", href: "/account" },
 ];
 
 export function Navbar() {
-  const [currentLink, setCurrentLink] = useState("Home");
+  const router = useRouter();
   const [title, setTitle] = useState("Dashboard");
+  const [currentLink, setCurrentLink] = useState("Home");
 
-  const handleClick = (name, title) => {
-    setCurrentLink(name);
-    setTitle(title);
-  };
+  useEffect(() => {
+    const matchingNav = navigation.find((nav) => nav.href === router.pathname);
+    if (matchingNav) {
+      setTitle(matchingNav.name);
+      setCurrentLink(matchingNav.name);
+    }
+  }, [router.pathname]);
 
   return (
     <div className="bg-gray-800 pb-24 pt-2">
@@ -32,7 +37,7 @@ export function Navbar() {
                     <div className="flex-shrink-0">
                       <img
                         className="h-8 w-8"
-                        src="/img/logo.jpg"
+                        src="/img/logo.png"
                         alt="Protocol 988"
                       />
                     </div>
@@ -42,7 +47,6 @@ export function Navbar() {
                           <Link
                             key={item.name}
                             href={item.href}
-                            onClick={() => handleClick(item.name, item.name)}
                             className={clsx(
                               currentLink === item.name
                                 ? "bg-gray-900 text-white"
