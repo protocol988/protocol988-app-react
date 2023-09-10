@@ -27,17 +27,14 @@ export default function Document() {
           href="/favicon/safari-pinned-tab.svg"
           color="#000000"
         />
-        <meta property="og:title" content="Protocol 988" />
         <meta
-          property="og:description"
-          content="The leading forward contracts DeFi platform"
+          name="viewport"
+          content="width=device-width, height=device-height, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no"
         />
-        <meta
-          name="description"
-          content="The leading forward contracts DeFi platform"
-          key="desc"
-        />
-        <meta property="og:image" content="/img/logo.jpg" />
+        <meta property="og:title" content="Protocol988" />
+        <title>Protocol988 – Onchain forward contracts</title>
+        <html className="h-full bg-white" />
+        <body className="h-full" />
       </Head>
       <body>
         <Main />

@@ -19,12 +19,6 @@ const faqs = [
     answer:
       "Alternatively market makers can mint a new forward position via depositing collateral and specifying the forward contract parameters. Minters will receive separate erc20 tokens representing the long and short side of the forward, so directional exposure can be obtained by selling the undesired tokens.",
   },
-  {
-    id: 4,
-    question: "What are their responsibilities and rewards?",
-    answer:
-      "The market maker is responsible for maintaining collateral for the position over the course of the contract lifetime, and will receive 988 utility tokens as a reward for providing this service.",
-  },
 ];
 
 const footerNavigation = {
@@ -96,114 +90,112 @@ const footerNavigation = {
 export default function Home() {
   return (
     <div className="bg-gray-900">
-      <main>
-        {/* Hero section */}
-        <div className="relative isolate overflow-hidden">
-          <svg
-            className="absolute inset-0 -z-10 h-full w-full stroke-white/10 [mask-image:radial-gradient(100%_100%_at_top_right,white,transparent)]"
-            aria-hidden="true"
-          >
-            <defs>
-              <pattern
-                id="983e3e4c-de6d-4c3f-8d64-b9761d1534cc"
-                width={200}
-                height={200}
-                x="50%"
-                y={-1}
-                patternUnits="userSpaceOnUse"
-              >
-                <path d="M.5 200V.5H200" fill="none" />
-              </pattern>
-            </defs>
-            <svg x="50%" y={-1} className="overflow-visible fill-gray-800/20">
-              <path
-                d="M-200 0h201v201h-201Z M600 0h201v201h-201Z M-400 600h201v201h-201Z M200 800h201v201h-201Z"
-                strokeWidth={0}
-              />
-            </svg>
-            <rect
-              width="100%"
-              height="100%"
+      {/* Hero section */}
+      <div className="relative isolate overflow-hidden">
+        <svg
+          className="absolute inset-0 -z-10 h-full w-full stroke-white/10 [mask-image:radial-gradient(100%_100%_at_top_right,white,transparent)]"
+          aria-hidden="true"
+        >
+          <defs>
+            <pattern
+              id="983e3e4c-de6d-4c3f-8d64-b9761d1534cc"
+              width={200}
+              height={200}
+              x="50%"
+              y={-1}
+              patternUnits="userSpaceOnUse"
+            >
+              <path d="M.5 200V.5H200" fill="none" />
+            </pattern>
+          </defs>
+          <svg x="50%" y={-1} className="overflow-visible fill-gray-800/20">
+            <path
+              d="M-200 0h201v201h-201Z M600 0h201v201h-201Z M-400 600h201v201h-201Z M200 800h201v201h-201Z"
               strokeWidth={0}
-              fill="url(#983e3e4c-de6d-4c3f-8d64-b9761d1534cc)"
             />
           </svg>
+          <rect
+            width="100%"
+            height="100%"
+            strokeWidth={0}
+            fill="url(#983e3e4c-de6d-4c3f-8d64-b9761d1534cc)"
+          />
+        </svg>
+        <div
+          className="absolute left-[calc(50%-4rem)] top-10 -z-10 transform-gpu blur-3xl sm:left-[calc(50%-18rem)] lg:left-48 lg:top-[calc(50%-30rem)] xl:left-[calc(50%-24rem)]"
+          aria-hidden="true"
+        >
           <div
-            className="absolute left-[calc(50%-4rem)] top-10 -z-10 transform-gpu blur-3xl sm:left-[calc(50%-18rem)] lg:left-48 lg:top-[calc(50%-30rem)] xl:left-[calc(50%-24rem)]"
-            aria-hidden="true"
-          >
-            <div
-              className="aspect-[1108/632] w-[69.25rem] bg-gradient-to-r from-[#80caff] to-[#4f46e5] opacity-20"
-              style={{
-                clipPath:
-                  "polygon(73.6% 51.7%, 91.7% 11.8%, 100% 46.4%, 97.4% 82.2%, 92.5% 84.9%, 75.7% 64%, 55.3% 47.5%, 46.5% 49.4%, 45% 62.9%, 50.3% 87.2%, 21.3% 64.1%, 0.1% 100%, 5.4% 51.1%, 21.4% 63.9%, 58.9% 0.2%, 73.6% 51.7%)",
-              }}
-            />
-          </div>
-          <div className="mx-auto max-w-7xl px-6 lg:flex lg:px-8 lg:pt-40">
-            <div className="mx-auto max-w-2xl flex-shrink-0 lg:mx-0 lg:max-w-xl lg:pt-8">
-              <img className="h-11" src="/img/logo.png" alt="Protocol 988" />
-              <h1 className="mt-10 text-4xl font-bold tracking-tight text-white sm:text-6xl">
-                Onchain Forward Contracts
-              </h1>
-              <p className="mt-6 text-lg leading-8 text-gray-300">
-                The leading forward contracts DeFi platform addressing
-                inefficiencies in current financial markets.
-              </p>
-              <div className="mt-10 flex items-center gap-x-6">
-                <Link
-                  href="/mint"
-                  className="rounded-md bg-[#3898FF] px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-[#2F87E6] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-400"
-                >
-                  Get started
-                </Link>
-                <a
-                  href="/"
-                  className="text-sm font-semibold leading-6 text-white"
-                >
-                  FAQs <span aria-hidden="true">→</span>
-                </a>
-              </div>
+            className="aspect-[1108/632] w-[69.25rem] bg-gradient-to-r from-[#80caff] to-[#4f46e5] opacity-20"
+            style={{
+              clipPath:
+                "polygon(73.6% 51.7%, 91.7% 11.8%, 100% 46.4%, 97.4% 82.2%, 92.5% 84.9%, 75.7% 64%, 55.3% 47.5%, 46.5% 49.4%, 45% 62.9%, 50.3% 87.2%, 21.3% 64.1%, 0.1% 100%, 5.4% 51.1%, 21.4% 63.9%, 58.9% 0.2%, 73.6% 51.7%)",
+            }}
+          />
+        </div>
+        <div className="mx-auto max-w-7xl px-6 lg:flex lg:px-8 lg:pt-40">
+          <div className="mx-auto max-w-2xl flex-shrink-0 lg:mx-0 lg:max-w-xl lg:pt-8">
+            <img className="h-11" src="/img/logo.png" alt="Protocol 988" />
+            <h1 className="mt-10 text-4xl font-bold tracking-tight text-white sm:text-6xl">
+              Onchain Forward Contracts
+            </h1>
+            <p className="mt-6 text-lg leading-8 text-gray-300">
+              The leading forward contracts DeFi platform addressing
+              inefficiencies in current financial markets.
+            </p>
+            <div className="mt-10 flex items-center gap-x-6">
+              <Link
+                href="/mint"
+                className="rounded-md bg-[#3898FF] px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-[#2F87E6] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-400"
+              >
+                Get started
+              </Link>
+              <Link
+                href="/"
+                className="text-sm font-semibold leading-6 text-white"
+              >
+                FAQs <span aria-hidden="true">→</span>
+              </Link>
             </div>
-            <div className="mx-auto mt-16 flex max-w-2xl sm:mt-24 lg:ml-10 lg:mr-0 lg:mt-0 lg:max-w-none lg:flex-none xl:ml-32">
-              <div className="max-w-3xl flex-none sm:max-w-5xl lg:max-w-none">
-                <img
-                  src="https://tailwindui.com/img/component-images/dark-project-app-screenshot.png"
-                  alt="App screenshot"
-                  width={2432}
-                  height={1442}
-                  className="w-[76rem] rounded-md bg-white/5 shadow-2xl ring-1 ring-white/10"
-                />
-              </div>
+          </div>
+          <div className="mx-auto mt-16 flex max-w-2xl sm:mt-24 lg:ml-10 lg:mr-0 lg:mt-0 lg:max-w-none lg:flex-none xl:ml-32">
+            <div className="max-w-3xl flex-none sm:max-w-5xl lg:max-w-none">
+              <img
+                src="https://tailwindui.com/img/component-images/dark-project-app-screenshot.png"
+                alt="App screenshot"
+                width={2432}
+                height={1442}
+                className="w-[76rem] rounded-md bg-white/5 shadow-2xl ring-1 ring-white/10"
+              />
             </div>
           </div>
         </div>
+      </div>
 
-        {/* FAQ section */}
-        <div className="mx-auto mt-8 max-w-7xl px-6 sm:mt-16 lg:px-8">
-          <h2 className="text-center text-lg font-semibold leading-8 text-white">
-            Frequently asked questions
-          </h2>
-          <div className="bg-gray-900">
-            <div className="mx-auto max-w-7xl px-6 lg:px-8">
-              <div className="mt-20">
-                <dl className="space-y-16 sm:grid sm:grid-cols-2 sm:gap-x-6 sm:gap-y-16 sm:space-y-0 lg:grid-cols-3 lg:gap-x-10">
-                  {faqs.map((faq) => (
-                    <div key={faq.id}>
-                      <dt className="text-base font-semibold leading-7 text-white">
-                        {faq.question}
-                      </dt>
-                      <dd className="mt-2 text-base leading-7 text-gray-300">
-                        {faq.answer}
-                      </dd>
-                    </div>
-                  ))}
-                </dl>
-              </div>
+      {/* FAQ section */}
+      <div className="mx-auto mt-8 max-w-7xl px-6 sm:mt-16 lg:px-8">
+        <h2 className="text-center text-lg font-semibold leading-8 text-white">
+          Frequently asked questions
+        </h2>
+        <div className="bg-gray-900">
+          <div className="mx-auto max-w-7xl px-6 lg:px-8">
+            <div className="mt-20">
+              <dl className="space-y-16 sm:grid sm:grid-cols-2 sm:gap-x-6 sm:gap-y-16 sm:space-y-0 lg:grid-cols-3 lg:gap-x-10">
+                {faqs.map((faq) => (
+                  <div key={faq.id}>
+                    <dt className="text-base font-semibold leading-7 text-white">
+                      {faq.question}
+                    </dt>
+                    <dd className="mt-2 text-base leading-7 text-gray-300">
+                      {faq.answer}
+                    </dd>
+                  </div>
+                ))}
+              </dl>
             </div>
           </div>
         </div>
-      </main>
+      </div>
 
       {/* Footer */}
       <footer aria-labelledby="footer-heading" className="relative">
