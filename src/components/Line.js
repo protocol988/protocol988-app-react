@@ -3,32 +3,38 @@ import { Card, Title, AreaChart } from "@tremor/react";
 const chartdata = [
   {
     date: "Jan 23",
-    TVL: 1.7,
+    2022: 1.7,
+    2023: 2.7,
   },
   {
     date: "Feb 23",
-    TVL: 1.8,
+    2022: 1.8,
+    2023: 2.9,
   },
   {
     date: "Mar 23",
-    TVL: 2,
+    2022: 2,
+    2023: 3,
   },
   {
     date: "Apr 23",
-    TVL: 2.1,
+    2022: 2.1,
+    2023: 3.1,
   },
   {
     date: "May 23",
-    TVL: 2.2,
+    2022: 2.2,
+    2023: 3.2,
   },
   {
     date: "Jun 23",
-    TVL: 2.3,
+    2022: 2.3,
+    2023: 3.3,
   },
 ];
 
 const dataFormatter = (number) => {
-  return "$ " + Intl.NumberFormat("us").format(number).toString();
+  return "$ " + Intl.NumberFormat("us").format(number).toString() + "b";
 };
 
 export function Line() {
@@ -39,7 +45,7 @@ export function Line() {
         className="h-72 mt-4"
         data={chartdata}
         index="date"
-        categories={["TVL"]}
+        categories={["2022", "2023"]}
         colors={["indigo", "cyan"]}
         valueFormatter={dataFormatter}
       />

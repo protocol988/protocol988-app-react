@@ -22,6 +22,7 @@ import {
 } from "@rainbow-me/rainbowkit/wallets";
 import { Layout } from "@/components/Layout";
 import { publicProvider } from "wagmi/providers/public";
+import { ForwardContextProvider } from "@/context/ForwardContext";
 import { configureChains, createConfig, WagmiConfig } from "wagmi";
 
 const { chains, publicClient, webSocketPublicClient } = configureChains(
@@ -70,16 +71,18 @@ const wagmiConfig = createConfig({
 
 export default function App({ Component, pageProps }) {
   return (
-    <WagmiConfig config={wagmiConfig}>
-      <RainbowKitProvider
-        theme={darkTheme()}
-        appInfo={demoAppInfo}
-        chains={chains}
-      >
-        <Layout>
-          <Component {...pageProps} />
-        </Layout>
-      </RainbowKitProvider>
-    </WagmiConfig>
+    <ForwardContextProvider>
+      <WagmiConfig config={wagmiConfig}>
+        <RainbowKitProvider
+          theme={darkTheme()}
+          appInfo={demoAppInfo}
+          chains={chains}
+        >
+          <Layout>
+            <Component {...pageProps} />
+          </Layout>
+        </RainbowKitProvider>
+      </WagmiConfig>
+    </ForwardContextProvider>
   );
 }
