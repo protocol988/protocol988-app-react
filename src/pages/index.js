@@ -146,7 +146,7 @@ export default function Home() {
             <div className="mt-10 flex items-center gap-x-6">
               <Link
                 href="/mint"
-                className="rounded-md bg-[#3898FF] px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-[#2F87E6] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-400"
+                className="rounded-md bg-[#3898FF] px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-400"
               >
                 Get started
               </Link>
@@ -206,14 +206,14 @@ export default function Home() {
           <div className="border-t border-white/10 pt-8 md:flex md:items-center md:justify-between">
             <div className="flex space-x-6 md:order-2">
               {footerNavigation.social.map((item) => (
-                <a
+                <Link
                   key={item.name}
                   href={item.href}
                   className="text-gray-500 hover:text-gray-400"
                 >
                   <span className="sr-only">{item.name}</span>
                   <item.icon className="h-6 w-6" aria-hidden="true" />
-                </a>
+                </Link>
               ))}
             </div>
             <p className="mt-8 text-xs leading-5 text-gray-400 md:order-1 md:mt-0">
