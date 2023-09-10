@@ -4,8 +4,7 @@ import { Metrics } from "@/components/Metrics";
 import { ForwardContext } from "@/context/ForwardContext";
 
 export default function Account() {
-  const { open } = useContext(ForwardContext);
-  console.log("open: ", open);
+  const { setForwardDetails } = useContext(ForwardContext);
 
   return (
     <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:max-w-7xl lg:px-8">
