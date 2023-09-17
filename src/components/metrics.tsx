@@ -1,3 +1,5 @@
+"use client";
+
 import {
   Title,
   Grid,
@@ -8,7 +10,7 @@ import {
   ProgressBar,
   CategoryBar,
 } from "@tremor/react";
-import { Line } from "@/components/Line";
+import { Line } from "@/components/line";
 
 export function Metrics() {
   return (

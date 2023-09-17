@@ -1,12 +1,12 @@
+"use client";
+
 import { useContext } from "react";
 import { Title } from "@tremor/react";
-import { Form } from "@/components/Form";
-import { Metrics } from "@/components/Metrics";
-import { ForwardContext } from "@/context/ForwardContext";
+import { Form } from "@/components/form";
+import { Metrics } from "@/components/metrics";
+//import { ForwardContext } from "@/context/ForwardContext";
 
 export default function Mint() {
-  const { setForwardDetails } = useContext(ForwardContext);
-
   return (
     <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:max-w-7xl lg:px-8">
       <h1 className="sr-only">Page title</h1>

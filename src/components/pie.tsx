@@ -1,3 +1,5 @@
+"use client";
+
 import { Card, Title, DonutChart } from "@tremor/react";
 
 const assets = [
@@ -22,7 +24,7 @@ const assets = [
 const valueFormatter = (number) =>
   `${Intl.NumberFormat("us").format(number).toString()}%`;
 
-export function Donut() {
+export function Pie() {
   return (
     <Card className="max-w-lg">
       <Title>Collateral Composition</Title>

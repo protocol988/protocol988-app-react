@@ -1,11 +1,13 @@
+"use client";
+
 import clsx from "clsx";
 import Link from "next/link";
 import { useAccount } from "wagmi";
-import { useRouter } from "next/router";
+import { usePathname } from "next/navigation";
 import { Disclosure } from "@headlessui/react";
 import { ConnectButton } from "@rainbow-me/rainbowkit";
 import { useState, useEffect, useContext } from "react";
-import { ForwardContext } from "@/context/ForwardContext";
+//import { ForwardContext } from "@/context/ForwardContext";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 
 const navigation = [
@@ -14,20 +16,20 @@ const navigation = [
 ];
 
 export function Navbar() {
-  const router = useRouter();
+  const pathname = usePathname();
   const { address } = useAccount();
   const [title, setTitle] = useState("Dashboard");
-  const { setAddress } = useContext(ForwardContext);
+  //const { setAddress } = useContext(ForwardContext);
   const [currentLink, setCurrentLink] = useState("Home");
 
   useEffect(() => {
-    const matchingNav = navigation.find((nav) => nav.href === router.pathname);
+    const matchingNav = navigation.find((nav) => nav.href === pathname);
     if (matchingNav) {
       setTitle(matchingNav.name);
       setCurrentLink(matchingNav.name);
     }
-    if (address) setAddress(address);
-  }, [router.pathname]);
+    //if (address) setAddress(address);
+  }, [pathname]);
 
   return (
     <div className="bg-gray-800 pb-24 pt-2">
